@@ -16,15 +16,15 @@ export const Watchlist = () => {
           </span>
         </div>
 
-        {watchlist.length > 0 ? (
+        {watchlist.length <=0 ? (
+          <h2 className="no-movies">No movies in your list! Add some!</h2>
+        ): (
           <div className="movie-grid">
             {watchlist.map((movie) => (
               <MovieCard movie={movie} key={movie.id} type="watchlist" />
             ))}
           </div>
-        ) : (
-          <h2 className="no-movies">No movies in your list! Add some!</h2>
-        )}
+        ) }
       </div>
     </div>
   );
