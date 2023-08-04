@@ -81,7 +81,7 @@ header .inner-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 header a {
@@ -168,7 +168,7 @@ header .nav-links li:last-child {
 
 .result-card .info .title {
   font-size: 1.25rem;
-  color: var(--primary);
+  color: var(--secondary);
   font-weight: 600;
   margin: 0;
 }
@@ -176,7 +176,13 @@ header .nav-links li:last-child {
 .result-card .info .release-date {
   font-size: 1.25rem;
   font-weight: 300;
-  color: var(--primary);
+  color: var(--secondary);
+  margin: 0;
+}
+.result-card .info .overview {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--white);
   margin: 0;
 }
 
@@ -207,7 +213,7 @@ header .nav-links li:last-child {
 }
 
 .movie-page .heading {
-  color: var(--primary);
+  color:ghostwhite;
   margin: 0;
 }
 
@@ -248,6 +254,7 @@ header .nav-links li:last-child {
 }
 
 .movie-card:hover .overlay {
+
   border: 3px solid var(--secondary);
 }
 
@@ -258,7 +265,7 @@ header .nav-links li:last-child {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(248, 246, 246, 0.8);
   border-radius: 5px;
   padding: 3px;
   opacity: 0;
@@ -267,25 +274,62 @@ header .nav-links li:last-child {
 
 .movie-card:hover .inner-card-controls {
   opacity: 1;
+  background-image: url('./images/close.png');
+  background-size:contain;
+  background-position: center;
 }
 
 .ctrl-btn {
   color: #fefefe;
   background-color: transparent;
   border: none;
-  transition: all 0.3s ease;
-  font-size: 1.25rem;
-  padding: 5px;
-  margin: 0;
 }
 
-.ctrl-btn:hover {
-  color: var(--secondary);
-  cursor: pointer;
-}
+
 
 .movie-page .no-movies {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;
 }
+
+body {
+  background-color: #f1f1f1;
+  background-image: url('./images/background.jpeg');
+  /* Adjust the background properties */
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center; /* Change this to position the background image */
+background-attachment: fixed; /* Optional: To fix the background when scrolling */
+
+/* Reset margin and padding to ensure the background covers the entire viewport */
+margin: 0;
+padding: 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #fefefe;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination span {
+  font-size: 16px;
+  font-weight: bold;
+}
+

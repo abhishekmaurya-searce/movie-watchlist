@@ -5,7 +5,6 @@ import { GlobalContext } from "../context/GlobalState";
 export const ResultCard = ({ movie }) => {
   const {
     addMovieToWatchlist,
-    addMovieToWatched,
     watchlist,
     watched,
   } = useContext(GlobalContext);
@@ -18,8 +17,6 @@ export const ResultCard = ({ movie }) => {
     : storedMovieWatched
     ? true
     : false;
-
-  const watchedDisabled = storedMovieWatched ? true : false;
 
   return (
     <div className="result-card">
@@ -37,9 +34,8 @@ export const ResultCard = ({ movie }) => {
       <div className="info">
         <div className="header">
           <h3 className="title">{movie.title}</h3>
-          <h4 className="release-date">
-            <Moment format="YYYY">{movie.release_date}</Moment>
-          </h4>
+          <h4 className="release-date"><Moment format="YYYY">{movie.release_date}</Moment></h4>
+          <h5 className="overview">Discription: {movie.overview}</h5>
         </div>
 
         <div className="controls">
@@ -49,14 +45,6 @@ export const ResultCard = ({ movie }) => {
             onClick={() => addMovieToWatchlist(movie)}
           >
             Add to Watchlist
-          </button>
-
-          <button
-            className="btn"
-            disabled={watchedDisabled}
-            onClick={() => addMovieToWatched(movie)}
-          >
-            Add to Watched
           </button>
         </div>
       </div>

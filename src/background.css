@@ -1,0 +1,13 @@
+body {
+    background-color: #f1f1f1;
+    background-image: url('./background.jpeg');
+    /* Adjust the background properties */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* Change this to position the background image */
+  background-attachment: fixed; /* Optional: To fix the background when scrolling */
+
+  /* Reset margin and padding to ensure the background covers the entire viewport */
+  margin: 0;
+  padding: 0;
+  }

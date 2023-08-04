@@ -2,12 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Watchlist } from "./components/Watchlist";
-import { Watched } from "./components/Watched";
 import { Add } from "./components/Add";
 import "./App.css";
-import "./lib/font-awesome/css/all.min.css";
 
 import { GlobalProvider } from "./context/GlobalState";
+import { Popular } from "./components/Popular";
 
 function App() {
   return (
@@ -16,14 +15,15 @@ function App() {
         <Header />
 
         <Switch>
+
           <Route exact path="/">
+            <Popular />
+          </Route>
+          <Route path="/watchlist">
             <Watchlist />
           </Route>
           <Route path="/add">
             <Add />
-          </Route>
-          <Route path="/watched">
-            <Watched />
           </Route>
         </Switch>
       </Router>
